@@ -1,0 +1,49 @@
+<div class="menu" ng-controller="MenuController">
+    <div class="icon-home">
+        <a href="">
+            <img src="img/musicstore.png">
+        </a>
+    </div>
+    <div class="menu-item"><a href="">Playlist</a></div>
+    <div class="menu-item"><a href="">Bảng xếp hạng</a></div>
+
+    <form novalidate class="searchbox" name="searchForm" on-outside-element-click="show=false">
+        <div class="search">
+            <input type="text" class="tbSearch" ng-model="searchText" name="searchText"
+                   placeholder="Tìm kiếm...">
+            <input type="submit" value="" class="btnSearch">
+        </div>
+        <div class="search-result" ng-show="show==true">
+            <div class="result-box">
+                <div class="more">
+                    Tìm kiếm với "{{searchText}}"...
+                </div>
+                <ul>
+                    <li ng-repeat="song in songs" class="search-song"  >
+                        <a href="">
+                            <div class="img-container">
+                                <img class="icon" ng-src="{{song.image}}">
+                            </div>
+
+                            <div class="detail">
+                                <div ng-bind-html="song.title | to_trusted" class="title"></div>
+                                <div ng-bind-html="song.subtitle | to_trusted" class="subtitle"></div>
+                            </div>
+                            <div class="functions">
+                                <a href="" ng-click="addFirst($index)"><div class="addFirst" title="Thêm vào tiếp theo danh sách"></div></a>
+
+                                <a href="" ng-click="addLast($index)"><div class="addLast" title="Thêm vào cuối danh sách"></div></a>
+                            </div>
+                            <div class="clear-float"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </form>
+
+    <div class="menu-item right"><a href="">TienLX</a></div>
+    <div class="menu-item right"><a href="">Playlist của tôi</a></div>
+    <div class="clear-float"></div>
+</div>

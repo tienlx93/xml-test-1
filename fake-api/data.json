@@ -1,0 +1,24 @@
+[{
+	"id":"00134",
+    "title":"<strong>Love</strong> Story",
+    "subtitle": "Taylor Swift",
+    "image": "http://image.mp3.zdn.vn/thumb/240_240/avatars/c/3/c3c4a3373f135ab5499021f62052cb8d_1413261154.jpg",
+    "type":"song"
+},{
+	"id":"00135",
+    "title":"Tên bài hát",
+    "subtitle": "Richard Clayderman",
+    "image": "http://image.mp3.zdn.vn/thumb/94_94/avatars/f/3/f3ccdd27d2000e3f9255a7e3e2c48800_1300094982.jpg",
+    "type":"song"
+},{
+    "id":"001354",
+    "title":"Love",
+    "image": "http://image.mp3.zdn.vn/thumb/94_94/avatars/f/3/f3ccdd27d2000e3f9255a7e3e2c48800_1300094982.jpg",
+    "type":"artist"
+},{
+    "id":"001354",
+    "title":"Love",
+    "subtitle": "V.A",
+    "image": "http://image.mp3.zdn.vn/thumb/94_94/avatars/f/3/f3ccdd27d2000e3f9255a7e3e2c48800_1300094982.jpg",
+    "type":"album"
+}]

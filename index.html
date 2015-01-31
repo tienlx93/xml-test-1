@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="musicLibrary" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet/less" type="text/css" href="css/core.less"/>
+    <link rel="stylesheet/less" type="text/css" href="css/main.less"/>
+    <link rel="stylesheet/less" type="text/css" href="css/header.less"/>
+
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="lib/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angularjs/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angularjs/angular-animate.min.js"></script>
+    <script type="text/javascript" src="lib/less-1.5.0.min.js"></script>
+    <script type="text/javascript" src="lib/xml2json.min.js"></script>
+    <script type="text/javascript" src="lib/angular-xml.min.js"></script>
+    <script type="text/javascript" src="lib/angular-drag-drop.min.js"></script>
+    <script type="text/javascript" src="lib/shuffle.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/directives/DocumentClickDirective.js"></script>
+
+    <script type="text/javascript" src="js/services/SearchService.js"></script>
+    <script type="text/javascript" src="js/services/XML2JSService.js"></script>
+    <script type="text/javascript" src="js/services/SongListService.js"></script>
+
+    <script type="text/javascript" src="js/controllers/InputPopupController.js"></script>
+    <script type="text/javascript" src="js/controllers/MainController.js"></script>
+    <script type="text/javascript" src="js/controllers/MenuController.js"></script>
+    <script type="text/javascript" src="js/controllers/PopupController.js"></script>
+    <script type="text/javascript" src="js/controllers/PlayerController.js"></script>
+
+    <link href="dist/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/jplayer/jquery.jplayer.js"></script>
+
+    <title></title>
+</head>
+<body>
+<div class="container">
+    <div class="header" ng-include="'template/menu.html'">
+    </div>
+
+    <div class="content">
+        <div id="ng-view" class="box left">
+            <div ng-view style="height: 100%;"></div>
+        </div>
+        <div class="player-container box right" ng-controller="PlayerController">
+            <div id="player" ng-include="'template/player.html'" charset="utf-8"></div>
+            <div class="playlist">
+
+                <ul dnd-list="songList">
+                    <li ng-if="songList.length==0" style="padding: 5px">
+                        Xin mời thêm bài hát vào playlist hoặc chọn mới playlist
+                    </li>
+                    <li ng-repeat="song in songList"
+                        dnd-draggable="song"
+                        dnd-moved="songList.splice($index, 1)"
+                        dnd-effect-allowed="move"
+                        dnd-selected=""
+                        ng-class="{'selected': currentSong.id === song.id}"
+                        ng-mouseover="song.hover=true" ng-mouseout="song.hover=false">
+                        <span class="no-index" ng-class="{'error':song.error}">{{$index+1}}.</span>
+                        <a href="" ng-click="chooseSong($index)">{{song.title}}</a> -
+                        <a href="">{{song.artist}}</a>
+
+                        <div class="functions" ng-class="{'hover':song.hover}">
+                            <div class="remove">
+                                <a href="" ng-click="remove($index)">
+                                    <img src="img/remove.png">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <pre>{{song.Lyrics}}</pre>
+            </div>
+            <div class="clear-float"></div>
+        </div>
+
+        <!--    <div class="popup hidden">
+
+                <div id="popup" class="hidden" ng-include="'modules/howl-photosharing/template/popup.html'"
+                     ng-controller="PopupController"></div>
+
+                <div id="input-popup" class="hidden" ng-include="'modules/howl-photosharing/template/inputPopup.html'"
+                     ng-controller="InputPopupController"></div>
+
+            </div>-->
+
+        <div id="loading" class="hidden">
+            <div class="popup-background"></div>
+            <div class="history-error">
+                <div class="loading-icon"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

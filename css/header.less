@@ -1,0 +1,123 @@
+.header {
+  height: 37px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.92)); /* Standard syntax */
+  color: #ffffff;
+  font-weight: bold;
+  a {
+    color: #ffffff;
+
+  }
+  .icon-home {
+    float: left;
+
+    width: 60px;
+    height: 60px;
+    img {
+      height: 100%;
+    }
+  }
+  .menu {
+    display: block;
+    width: 980px;
+    margin: auto;
+    .menu-item {
+      float: left;
+      padding: 12px 15px;
+      &.right {
+        float: right;
+      }
+      &:hover {
+        background: linear-gradient(to top, rgba(151, 151, 151, 1), rgba(49, 47, 47, 0.92));
+      }
+    }
+
+    .searchbox {
+      float: left;
+      padding: 5px 15px;
+    }
+  }
+
+}
+
+.search {
+  .tbSearch {
+    display: block;
+    float: left;
+    padding: 0 10px;
+    width: 325px;
+    height: 26px;
+    border: 0;
+    border-radius: 2px 0 0 2px;
+    color: #5c5c5c;
+    line-height: 26px;
+  }
+  .btnSearch {
+    float: right;
+    width: 32px;
+    height: 26px;
+    background-position: -122px -76px;
+  }
+}
+
+.result-box {
+  position: absolute;
+  top: 33px;
+  width: 376px;
+  background: #EFEFEF;
+  border-radius: 2px;
+  z-index: 2;
+  color: rgb(88, 88, 88);
+  border: 1px solid rgb(166, 166, 166);
+  a {
+    color: rgb(88, 88, 88);
+  }
+  .more {
+    padding: 10px;
+    border-bottom: 1px solid rgb(166, 166, 166);
+  }
+}
+
+.search-song {
+  height: 50px;
+  padding: 10px;
+  font-weight: normal;
+  border-bottom: 1px solid rgb(166, 166, 166);
+  .img-container {
+    width: 45px;
+    height: 45px;
+    float: left;
+  }
+  &:last-child {
+    border: none;
+  }
+  .icon {
+    width: 45px;
+    float: left;
+  }
+  .detail {
+    float: left;
+    padding: 10px;
+    width: 60%;
+    .subtitle {
+      font-size: 11px;
+    }
+  }
+  .functions {
+    float: left;
+    div {
+      width: 24px;
+      height: 24px;
+      margin: 10px 5px;
+      float: left;
+      cursor: pointer;
+    }
+    .addFirst {
+      background: url(../img/play.png) no-repeat center;
+      background-size: contain;
+    }
+    .addLast {
+      background: url(../img/next.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+}

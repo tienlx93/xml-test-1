@@ -1,0 +1,104 @@
+<style type="text/css">
+    .jp-audio {
+        margin: 10px;
+        width: 330px;
+    }
+
+    .jp-progress {
+        top: 10px !important;
+        left: 20px !important;
+        width: 290px !important;
+        height: 8px !important;
+    }
+
+    .jp-controls {
+        width: 290px !important;
+        padding-top: 35px !important;
+    }
+
+    .jp-time-holder {
+        left: 10px !important;
+        width: 310px !important;
+        top: 19px !important;
+    }
+
+    .jp-volume-controls {
+        top: 38px;
+        left: 214px;
+    }
+
+    .jp-toggles {
+        left: 232px !important;
+        top: 55px !important;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+
+        $("#jquery_jplayer_1").jPlayer({
+            swfPath: "../../dist/jplayer",
+            supplied: "mp3",
+            wmode: "window",
+            useStateClassSkin: true,
+            autoBlur: false,
+            smoothPlayBar: true,
+            keyEnabled: true,
+            remainingDuration: true,
+            toggleDuration: true
+        });
+        $("#jquery_jplayer_1").bind($.jPlayer.event.ended, function(event) {
+            $('.jp-next').click();
+        });
+    });
+</script>
+<meta charset="UTF-8">
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+    <div class="jp-type-playlist">
+        <div class="jp-gui jp-interface">
+            <div class="jp-controls">
+                <button class="jp-previous" role="button" tabindex="0" ng-click="prevSong()">previous</button>
+                <button class="jp-play" role="button" tabindex="0">play</button>
+                <button class="jp-next" role="button" tabindex="0" ng-click="nextSong()">next</button>
+                <button class="jp-stop" role="button" tabindex="0">stop</button>
+            </div>
+            <div class="jp-progress">
+                <div class="jp-seek-bar" style="width: 100%;">
+                    <div class="jp-play-bar" style=""></div>
+                </div>
+            </div>
+            <div class="jp-volume-controls">
+                <button class="jp-mute" role="button" tabindex="0">mute</button>
+                <button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+                <div class="jp-volume-bar">
+                    <div class="jp-volume-bar-value" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="jp-time-holder">
+                <div class="jp-current-time" role="timer" aria-label="time">00:00</div>
+                <div class="jp-duration" role="timer" aria-label="duration">00:00</div>
+            </div>
+            <div class="jp-toggles">
+                <button class="jp-repeat" role="button" tabindex="0">repeat</button>
+                <button class="jp-shuffle" role="button" tabindex="0" ng-click="shuffle()">shuffle</button>
+            </div>
+        </div>
+        <div class="jp-details song-detail">
+            <div class="img-container">
+                <img class="icon" ng-src="{{song.AlbumArt}}" src="img/musicstore.png">
+            </div>
+            <div class="detail">
+                <div ng-if="!song.Title">Xin mời chọn bài hát</div>
+                <div ng-bind-html="song.Title | to_trusted" class="title"></div>
+                <div ng-bind-html="song.Artist | to_trusted" class="artist"></div>
+            </div>
+            <div class="clear-float"></div>
+        </div>
+        <div class="jp-no-solution">
+            <span>Update Required</span>
+            To play the media you will need to either update your browser to a recent version or update your <a
+                href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+    </div>
+</div>
+
