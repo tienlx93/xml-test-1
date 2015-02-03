@@ -31,4 +31,6 @@ app.filter('to_trusted', ['$sce', function($sce){
 
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('xmlHttpInterceptor');
-})
+});
+
+var BACK_END_URL = "http://localhost:8080/YourPlaylist/";

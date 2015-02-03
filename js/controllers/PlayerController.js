@@ -76,9 +76,11 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
                         break;
                 }
             });
-            var path = "fake-api/" + $scope.currentSong.id + ".xml";
+            var path = BACK_END_URL + "song/" + $scope.currentSong.id + ".xml";
             $http.get(path).success(function (data) {
                 $scope.song = data.Song;
+                var source = JSON.parse(data.Song.Source);
+                $scope.song.Source = source.data[0].source;
 //                $("#jquery_jplayer_1").jPlayer("stop");
                 $("#jquery_jplayer_1").jPlayer("setMedia", {
                     mp3: data.Song.Source
