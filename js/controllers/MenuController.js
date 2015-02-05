@@ -22,23 +22,18 @@ controllers.controller('MenuController', ['$scope', '$sce', 'SearchService', 'So
         };
 
         var getSong = function(i) {
-            var result = $scope.result[i];
+            var result = $scope.songs[i];
             if (!result) {
                 return null;
             } else {
-                var song = {
-                    id:result.id,
-                    title:result.title,
-                    artist:result.subtitle
-                };
-                return song;
+                return result;
             }
         };
         var callback = function(data){
             var songs = [];
             var albums = [];
             var artists = [];
-            for (var i = 0; i < data.length; i++) {
+/*            for (var i = 0; i < data.length; i++) {
                 switch (data[i].type) {
                     case "song":
                         songs.push(data[i]);
@@ -50,11 +45,11 @@ controllers.controller('MenuController', ['$scope', '$sce', 'SearchService', 'So
                         albums.push(data[i]);
                         break;
                 }
-            }
-            $scope.result = data;
-            $scope.songs = songs;
-            $scope.albums = albums;
-            $scope.artist = artists;
+            }*/
+//            $scope.result = data;
+            $scope.songs = data;
+//            $scope.albums = albums;
+//            $scope.artist = artists;
             $scope.$$phase || $scope.$apply();
         };
 

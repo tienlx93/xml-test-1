@@ -49,7 +49,19 @@
         <div class="player-container box right" ng-controller="PlayerController">
             <div id="player" ng-include="'template/player.html'" charset="utf-8"></div>
             <div class="playlist">
-
+                <div class="playlist-function">
+                    <div class="save">
+                        <a href="" ng-click="saveList()" class="save">
+                            <img src="img/edit_add.png"><span>Lưu playlist</span>
+                        </a>
+                    </div>
+                    <div class="remove">
+                        <a href="" ng-click="removeList()" class="remove">
+                            <img src="img/remove.png"><span>Xóa playlist</span>
+                        </a>
+                    </div>
+                    <div class="clear-float"></div>
+                </div>
                 <ul dnd-list="songList">
                     <li ng-if="songList.length==0" style="padding: 5px">
                         Xin mời thêm bài hát vào playlist hoặc chọn mới playlist
@@ -74,7 +86,7 @@
                         </div>
                     </li>
                 </ul>
-                <pre>{{song.Lyrics}}</pre>
+                <div>{{song.Lyrics}}</div>
             </div>
             <div class="clear-float"></div>
         </div>

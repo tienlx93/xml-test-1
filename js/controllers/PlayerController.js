@@ -61,6 +61,14 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
             }
         };
 
+        $scope.removeList = function () {
+            SongListService.songList = [];
+        };
+
+        $scope.saveList = function () {
+            SongListService.saveList();
+        };
+
         var playSong = function (song) {
             $scope.currentSong = song;
             SongListService.currentSong = song;
@@ -70,7 +78,7 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
             $("#jquery_jplayer_1").on($.jPlayer.event.error, function (event) {
                 switch (event.jPlayer.error.type) {
                     case $.jPlayer.error.URL:
-                        songError();
+                        //songError();
                         break;
                     case $.jPlayer.error.NO_SOLUTION:
                         break;

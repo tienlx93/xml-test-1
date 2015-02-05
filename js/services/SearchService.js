@@ -4,18 +4,16 @@ services.factory("SearchService", ['$http', '$location',
         services.requestSearch = function(text, callback){
             $http({
                 method: 'GET',
-                url: 'fake-api/data.json',
+                url: BACK_END_URL + 'Search',
                 params: {
-                    'searchText': text
+                    'query': text,
+                    'method': 'quick'
                 }
             })
                 .success(function (data) {
                     callback(data);
 
-                }).
-                error(function (data, status) {
-
-                });
+                })
         };
 
 

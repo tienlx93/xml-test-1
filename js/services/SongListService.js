@@ -1,5 +1,5 @@
-services.factory("SongListService", [
-    function () {
+services.factory("SongListService", ['$http',
+    function ($http) {
         var services = {};
         services.songList = [];
         services.currentSong = {};
@@ -18,6 +18,27 @@ services.factory("SongListService", [
                 }
             }
             return null;
+        };
+        services.saveList = function() {
+            var list = [];
+            for (var i = 0; i < services.songList.length; i++) {
+                var id = services.songList[i].id;
+                list.push(id);
+            }
+            $http({
+                method: 'POST',
+                url: BACK_END_URL + 'SavePlayList',
+                params: {
+                    'name': 'Last Playlist',
+                    'email': 'tienlx@yourplaylist.tk',
+                    'songList': list
+                }
+            })
+                .success(function (data) {
+                    if(data == "Error") {
+                        console.log("error");
+                    }
+                })
         };
         return services;
     }]);
