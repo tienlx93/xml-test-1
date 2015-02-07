@@ -1,0 +1,136 @@
+.popup,
+.input-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+.gradient {
+  text-align: center;
+  padding: 10px;
+}
+.popup-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#input-popup {
+  .popup-container {
+    top: 150px !important;
+  }
+}
+#login-popup {
+  label {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  .popup-container {
+    top: 150px !important;
+    height: 260px;
+    &.short {
+      height: 220px;
+      &.err {
+        height: 240px;
+      }
+    }
+    &.err {
+      height: 280px;
+    }
+  }
+}
+#popup, #input-popup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.popup-container {
+  position: relative;
+  margin: auto;
+  min-height: 170px;
+  width: 30%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 20px;
+  top: 0;
+}
+
+.message {
+  color: #747474;
+  padding: 13px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  &.center {
+    display: block;
+  }
+  span {
+    line-height: 20px;
+  }
+}
+
+.buttons {
+  border-top: 1px solid darkgray;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.popup-btn {
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 0;
+  float: left;
+  &:active {
+    background-color: #aeaeae !important;
+  }
+  &#btn-ok {
+    width: 100%;
+    color: green;
+    border-radius: 0 0 5px 5px;
+  }
+
+  &#btn-no {
+    width: 50%;
+    color: grey;
+    border-radius: 0 0 0 5px;
+    position: relative;
+  }
+
+  &#btn-no:before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: darkgray;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &#btn-yes {
+    width: 50%;
+    color: green;
+    border-radius: 0 0 5px 0;
+    &.disable {
+      color: grey;
+    }
+  }
+}
+
+.popup-title {
+  color: #0079ff;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.popup-text {
+  display: block;
+  margin: auto;
+  width: 60%;
+  padding: 4px;
+}

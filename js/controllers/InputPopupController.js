@@ -1,3 +1,23 @@
-/**
- * Created by tienl_000 on 28/01/15.
- */
+controllers.controller('InputPopupController', ['$scope', 'InputPopupService',
+    function ($scope, InputPopupService) {
+        $scope.input = {};
+        $scope.input.popupText = "";
+
+        $scope.editText = function (form) {
+            var inputText = InputPopupService.popupText;
+            if (form.$valid) {
+                $("#input-text").blur();
+                inputText = $scope.input.popupText;
+                InputPopupService.text = inputText;
+                InputPopupService.closePopup();
+                $scope.input.popupText = "";
+            }
+        };
+
+        $scope.closePopup = function (cancel) {
+            $("#input-text").blur();
+            $scope.input.popupText = "";
+            InputPopupService.closePopup(cancel);
+        };
+
+    }]);

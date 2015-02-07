@@ -1,44 +1,73 @@
-services.factory("SongListService", ['$http',
-    function ($http) {
+services.factory("SongListService", ['$http', 'AccountService',
+    function ($http, AccountService) {
         var services = {};
         services.songList = [];
         services.currentSong = {};
         services.getCurrentSong = function () {
             for (var i = 0; i < services.songList.length; i++) {
-                if (services.songList[i].id === services.currentSong.id) {
+                if (services.songList[i].Id === services.currentSong.Id) {
                     return i;
                 }
             }
             return -1;
         };
-        services.getSong = function (id) {
+        services.getSong = function (Id) {
             for (var i = 0; i < services.songList.length; i++) {
-                if (services.songList[i].id === id) {
+                if (services.songList[i].Id === Id) {
                     return services.songList[i];
                 }
             }
             return null;
         };
-        services.saveList = function() {
+        services.saveList = function (name) {
             var list = [];
             for (var i = 0; i < services.songList.length; i++) {
-                var id = services.songList[i].id;
-                list.push(id);
+                var Id = services.songList[i].Id;
+                list.push(Id);
             }
             $http({
-                method: 'POST',
-                url: BACK_END_URL + 'SavePlayList',
+                method: 'GET',
+                url: BACK_END_URL + 'PlaylistController',
                 params: {
-                    'name': 'Last Playlist',
-                    'email': 'tienlx@yourplaylist.tk',
+                    'action': 'save',
+                    'name': name,
+                    'email': AccountService.user.email,
+                    'username': AccountService.user.username,
                     'songList': list
                 }
             })
                 .success(function (data) {
-                    if(data == "Error") {
+                    if (data == "Error") {
                         console.log("error");
                     }
-                })
+                });
         };
+
+        var getXMLPlaylist = function (id) {
+            $http({
+                method: 'GET',
+                url: BACK_END_URL + 'playlist/' + id + '.xml'
+            }).success(function (data) {
+                    services.songList = data.SongList.List.Song;
+                });
+        };
+
+
+        services.loadLastPlaylist = function () {
+            $http({
+                method: 'GET',
+                url: BACK_END_URL + 'PlaylistController',
+                params: {
+                    'action': 'getLastPlaylist'
+                }
+            }).success(function (data) {
+                    if (data.lastId) {
+                        getXMLPlaylist(data.lastId);
+                    }
+                });
+
+        };
+
+
         return services;
     }]);

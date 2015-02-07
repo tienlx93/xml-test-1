@@ -22,12 +22,12 @@
                     <li ng-repeat="song in songs" class="search-song"  >
                         <a href="">
                             <div class="img-container">
-                                <img class="icon" ng-src="{{song.image}}">
+                                <img class="icon" ng-src="{{song.image}}" src="img/albumart-cd.png">
                             </div>
 
                             <div class="detail">
-                                <div ng-bind-html="song.title | to_trusted" class="title"></div>
-                                <div ng-bind-html="song.artist | to_trusted" class="subtitle"></div>
+                                <div ng-bind-html="song.title | to_trusted : searchText" class="title"></div>
+                                <div ng-bind-html="song.artist | to_trusted : searchText" class="subtitle"></div>
                             </div>
                             <div class="functions">
                                 <a href="" ng-click="addFirst($index)"><div class="addFirst" title="Thêm vào tiếp theo danh sách"></div></a>
@@ -42,8 +42,13 @@
 
         </div>
     </form>
-
-    <div class="menu-item right"><a href="">TienLX</a></div>
-    <div class="menu-item right"><a href="">Playlist của tôi</a></div>
+    <div ng-show="user.username">
+        <div class="menu-item right"><a href="">{{user.username}}</a></div>
+        <div class="logout"></div>
+        <div class="menu-item right"><a href="">Playlist của tôi</a></div>
+    </div>
+    <div ng-show="!user.username">
+        <div class="menu-item right"><a href="" ng-click="login()">Đăng nhập / Đăng kí</a></div>
+    </div>
     <div class="clear-float"></div>
 </div>

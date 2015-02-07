@@ -1,22 +1,19 @@
 /**
  * Created by tienl_000 on 29/01/15.
  */
-controllers.controller('PlayerController', ['$scope', '$http', 'SongListService',
-    function ($scope, $http, SongListService) {
+controllers.controller('PlayerController', ['$scope', '$http', 'SongListService', 'InputPopupService', 'AccountService',
+    function ($scope, $http, SongListService, InputPopupService, AccountService) {
         $scope.song = {}; //song for music player
         $scope.currentSong = SongListService.currentSong; //song for playlist
         $scope.songList = SongListService.songList; //playlist
-        
-        $scope.$watch(function(){
+
+        $scope.$watch(function () {
             return SongListService.songList.length;
-        },function(){
+        }, function () {
             $scope.songList = SongListService.songList; //playlist
         });
-        
-        $http.get('fake-api/playlist.json').success(function (data) {
-            $scope.songList = data;
-            SongListService.songList = data;
-        });
+
+
 
         $scope.chooseSong = function (i) {
             playSong($scope.songList[i]);
@@ -55,7 +52,7 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
                 $scope.nextSong();
             }
             $scope.songList.splice(i, 1);
-            
+
             if ($scope.songList.length == 0) {
                 songError();
             }
@@ -65,16 +62,32 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
             SongListService.songList = [];
         };
 
+        var doSaveList = function () {
+            InputPopupService.showPopup();
+            InputPopupService.success = function (data) {
+                SongListService.saveList(data);
+            };
+        };
+
         $scope.saveList = function () {
-            SongListService.saveList();
+            if (AccountService.user.email) {
+                doSaveList();
+            } else {
+                if (!AccountService.user.username) {
+                    AccountService.showPopup(function () {
+                        doSaveList();
+                    });
+                }
+            }
+
         };
 
         var playSong = function (song) {
             $scope.currentSong = song;
             SongListService.currentSong = song;
-            if (song.error) {
-                return;
-            }
+            /*if (song.error) {
+             return;
+             }*/
             $("#jquery_jplayer_1").on($.jPlayer.event.error, function (event) {
                 switch (event.jPlayer.error.type) {
                     case $.jPlayer.error.URL:
@@ -84,7 +97,7 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
                         break;
                 }
             });
-            var path = BACK_END_URL + "song/" + $scope.currentSong.id + ".xml";
+            var path = BACK_END_URL + "song/" + $scope.currentSong.Id + ".xml";
             $http.get(path).success(function (data) {
                 $scope.song = data.Song;
                 var source = JSON.parse(data.Song.Source);

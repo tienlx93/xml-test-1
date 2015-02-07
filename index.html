@@ -6,16 +6,20 @@
     <link rel="stylesheet/less" type="text/css" href="css/core.less"/>
     <link rel="stylesheet/less" type="text/css" href="css/main.less"/>
     <link rel="stylesheet/less" type="text/css" href="css/header.less"/>
+    <link rel="stylesheet/less" type="text/css" href="css/popup.less"/>
+    <link rel="stylesheet/less" type="text/css" href="css/player.less"/>
 
     <script type="text/javascript" src="lib/jquery.min.js"></script>
     <script type="text/javascript" src="lib/angularjs/angular.min.js"></script>
     <script type="text/javascript" src="lib/angularjs/angular-route.min.js"></script>
     <script type="text/javascript" src="lib/angularjs/angular-animate.min.js"></script>
+    <script type="text/javascript" src="lib/angularjs/angular-cookies.min.js"></script>
     <script type="text/javascript" src="lib/less-1.5.0.min.js"></script>
     <script type="text/javascript" src="lib/xml2json.min.js"></script>
     <script type="text/javascript" src="lib/angular-xml.min.js"></script>
     <script type="text/javascript" src="lib/angular-drag-drop.min.js"></script>
     <script type="text/javascript" src="lib/shuffle.js"></script>
+    <script type="text/javascript" src="lib/bodau.js"></script>
 
     <script type="text/javascript" src="js/app.js"></script>
 
@@ -24,12 +28,16 @@
     <script type="text/javascript" src="js/services/SearchService.js"></script>
     <script type="text/javascript" src="js/services/XML2JSService.js"></script>
     <script type="text/javascript" src="js/services/SongListService.js"></script>
+    <script type="text/javascript" src="js/services/InputPopupService.js"></script>
+    <script type="text/javascript" src="js/services/AccountService.js"></script>
+    <script type="text/javascript" src="js/services/ApiService.js"></script>
 
     <script type="text/javascript" src="js/controllers/InputPopupController.js"></script>
     <script type="text/javascript" src="js/controllers/MainController.js"></script>
     <script type="text/javascript" src="js/controllers/MenuController.js"></script>
     <script type="text/javascript" src="js/controllers/PopupController.js"></script>
     <script type="text/javascript" src="js/controllers/PlayerController.js"></script>
+    <script type="text/javascript" src="js/controllers/LoginController.js"></script>
 
     <link href="dist/skin/blue.monday/css/jplayer.blue.monday.min.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="lib/jquery.min.js"></script>
@@ -52,12 +60,17 @@
                 <div class="playlist-function">
                     <div class="save">
                         <a href="" ng-click="saveList()" class="save">
-                            <img src="img/edit_add.png"><span>Lưu playlist</span>
+                            <img src="img/save.png"><span>Lưu</span>
                         </a>
                     </div>
                     <div class="remove">
                         <a href="" ng-click="removeList()" class="remove">
-                            <img src="img/remove.png"><span>Xóa playlist</span>
+                            <img src="img/remove.png"><span>Xóa</span>
+                        </a>
+                    </div>
+                    <div class="add">
+                        <a href="" ng-click="saveList()" class="remove">
+                            <img src="img/edit_add.png"><span>Lưu mới...</span>
                         </a>
                     </div>
                     <div class="clear-float"></div>
@@ -71,11 +84,11 @@
                         dnd-moved="songList.splice($index, 1)"
                         dnd-effect-allowed="move"
                         dnd-selected=""
-                        ng-class="{'selected': currentSong.id === song.id}"
+                        ng-class="{'selected': currentSong.Id === song.Id}"
                         ng-mouseover="song.hover=true" ng-mouseout="song.hover=false">
                         <span class="no-index" ng-class="{'error':song.error}">{{$index+1}}.</span>
-                        <a href="" ng-click="chooseSong($index)">{{song.title}}</a> -
-                        <a href="">{{song.artist}}</a>
+                        <a href="" ng-click="chooseSong($index)">{{song.Title}}</a> -
+                        <a href="">{{song.Artist}}</a>
 
                         <div class="functions" ng-class="{'hover':song.hover}">
                             <div class="remove">
@@ -91,22 +104,17 @@
             <div class="clear-float"></div>
         </div>
 
-        <!--    <div class="popup hidden">
+        <div class="popup hidden">
 
-                <div id="popup" class="hidden" ng-include="'modules/howl-photosharing/template/popup.html'"
-                     ng-controller="PopupController"></div>
-
-                <div id="input-popup" class="hidden" ng-include="'modules/howl-photosharing/template/inputPopup.html'"
-                     ng-controller="InputPopupController"></div>
-
-            </div>-->
-
-        <div id="loading" class="hidden">
+            <!--<div id="popup" class="hidden" ng-include="'modules/howl-photosharing/template/popup.html'"
+                 ng-controller="PopupController"></div>-->
             <div class="popup-background"></div>
-            <div class="history-error">
-                <div class="loading-icon"></div>
-            </div>
+            <div id="input-popup" class="hidden" ng-include="'template/inputPopup.html'"
+                 ng-controller="InputPopupController"></div>
+            <div id="login-popup" class="hidden" ng-include="'template/loginPopup.html'"
+                 ng-controller="LoginController"></div>
         </div>
     </div>
+</div>
 </body>
 </html>

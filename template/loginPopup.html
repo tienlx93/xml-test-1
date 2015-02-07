@@ -1,0 +1,40 @@
+<div class="popup-container" ng-init="input.noAcc=false" ng-class="{'short':!input.noAcc, 'err':error}">
+    <form novalidate name="inputForm" ng-submit="editText(inputForm)">
+        <div class="popup-title" id="input-title" >
+            <span ng-show="input.noAcc">Đăng kí</span>
+            <span ng-show="!input.noAcc">Đăng nhập</span>
+        </div>
+
+        <label for="email">&nbsp;</label>
+        <input class="popup-text" name="popupText" id="email" type="text" ng-model="input.email" placeholder="Email"
+                   required=""/>
+        <br/>
+        <label for="password">&nbsp;</label>
+        <input class="popup-text" name="popupText" id="password" type="password" ng-model="input.password"
+               required="" placeholder="Mật khẩu"/>
+        <br>
+        <label>
+            <input type="checkbox" ng-model="input.noAcc" ng-click="change()">
+            Tôi chưa có tài khoản
+        </label>
+
+        <div ng-show="input.noAcc">
+            <label for="username">&nbsp;</label>
+            <input class="popup-text" name="popupText" id="username" type="text" ng-model="input.username"
+                   placeholder="Tên tài khoản" />
+        </div>
+
+        <div class="error" ng-show="error">
+            <span ng-show="input.noAcc">Email đã tồn tại</span>
+            <span ng-show="!input.noAcc">Thông tin đăng nhập không chính xác</span>
+        </div>
+
+        <div class="buttons">
+            <div class="popup-btn" id="btn-no" ng-click="closePopup(true)" >Hủy</div>
+            <div class="popup-btn" ng-class="{disable:inputForm.$invalid}" id="btn-yes" ng-click="editText(inputForm)">
+                <span ng-show="input.noAcc">Đăng kí</span>
+                <span ng-show="!input.noAcc">Đăng nhập</span>
+            </div>
+        </div>
+    </form>
+</div>

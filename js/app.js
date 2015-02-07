@@ -6,11 +6,16 @@ var app = angular.module('musicLibrary', [
     'controllers', 'services', 'directives'
 ]);
 
-app.config(['$routeProvider',
-    function ($routeProvider) {
+app.config(['$routeProvider', '$httpProvider',
+    function ($routeProvider, $httpProvider) {
+        $httpProvider.defaults.withCredentials = true;
 
         $routeProvider.
             when('/main', {
+                templateUrl: 'template/main.html',
+                controller: 'MainController'
+            }).
+            ('/search/{}', {
                 templateUrl: 'template/main.html',
                 controller: 'MainController'
             }).
@@ -23,11 +28,24 @@ var controllers = angular.module('controllers', []);
 var services = angular.module('services', []);
 var directives = angular.module('directives', []);
 
-app.filter('to_trusted', ['$sce', function($sce){
-    return function(text) {
-        return $sce.trustAsHtml(text);
+app.filter('to_trusted', ['$sce', function ($sce) {
+    return function (text, data) {
+        var result = text;
+        if (text && data) {
+            var unmarkText = bodau(text);
+            var i = unmarkText.indexOf(bodau(data));
+            var length = data.length;
+            if (i >= 0) {
+                result = text.substring(0, i)
+                    + "<strong>" + text.substring(i, i + length) + "</strong>"
+                    + text.substring(i + length);
+            }
+        }
+        return $sce.trustAsHtml(result);
+
     };
 }]);
+
 
 app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('xmlHttpInterceptor');

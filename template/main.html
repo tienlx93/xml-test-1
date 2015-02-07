@@ -1,3 +1,85 @@
-<div>
+<div class="main-content">
+    <div class="playlist-list main-item" ng-if="display.playlist">
+        <div class="title-box">
+            <div class="title">Playlist</div>
+        </div>
+        <div class="clear-float"></div>
+        <div class="list">
+            <ul>
+                <li>ABC</li>
+                <li>ABC</li>
+                <li>ABC</li>
+                <li>ABC</li>
+                <li>ABC</li>
+                <li>ABC</li>
+                <li>ABC</li>
+            </ul>
+        </div>
+        <div class="clear-float"></div>
+    </div>
 
+    <div class="category-list main-item" ng-if="display.category">
+        <div class="title-box">
+            <div class="title">Thể loại bài hát</div>
+        </div>
+        <div class="clear-float"></div>
+        <div class="list">
+            <ul>
+                <li ng-repeat="category in cat">
+                    <a href="" ng-class="{active:selectedCat.id==$index}" ng-click="selectCat($index)">
+                        {{category.name}}
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="clear-float"></div>
+    </div>
+
+    <div class="song-list main-item">
+        <div class="title-box">
+            <div class="title">Bài hát</div>
+            <div class="sort">
+                <a href ng-click="sortType=''">Ngẫu nhiên</a> |
+                <a href ng-click="sortType='playCount'">Lượt nghe</a>
+            </div>
+            <div class="clear-float"></div>
+        </div>
+        <div class="clear-float"></div>
+        <div class="list">
+            <div class="nav">
+                <div class="prev" ng-click="prevPage()" ng-class="{disabled:currentPage==1}">Trước</div>
+                <span>Trang {{currentPage}} / {{numPages()}}</span>
+                <div class="next" ng-click="nextPage()" ng-class="{disabled:currentPage==numPages()}">Kế tiếp</div>
+            </div>
+            <div class="clear-float"></div>
+            <ul>
+                <li ng-repeat="song in filteredSongs | orderBy:sortType" class="main-song search-song">
+                    <a href="">
+                        <div class="img-container">
+                            <img class="icon"
+                                 ng-src="{{song.image.replace('STATIC_PATH_V3/images/singer_avatar.jpg','img/albumart-cd.png')}}"
+                                 src="img/albumart-cd.png">
+                        </div>
+
+                        <div class="detail">
+                            <div class="title">{{song.title}}</div>
+                            <div class="subtitle">{{song.artist}}</div>
+                        </div>
+                        <div class="functions">
+                            <a href="" ng-click="addFirst($index)">
+                                <div class="addFirst" title="Thêm vào tiếp theo danh sách"></div>
+                            </a>
+
+                            <a href="" ng-click="addLast($index)">
+                                <div class="addLast" title="Thêm vào cuối danh sách"></div>
+                            </a>
+                        </div>
+                        <div class="clear-float"></div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
 </div>
