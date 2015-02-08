@@ -1,22 +1,24 @@
 <div class="menu" ng-controller="MenuController">
     <div class="icon-home">
-        <a href="">
+        <a href="#/main">
             <img src="img/musicstore.png">
         </a>
     </div>
-    <div class="menu-item"><a href="">Playlist</a></div>
-    <div class="menu-item"><a href="">Bảng xếp hạng</a></div>
+    <div class="menu-item"><a href="#/playlist">Playlist</a></div>
+    <div class="menu-item"><a href="#/topsongs">Bảng xếp hạng</a></div>
 
-    <form novalidate class="searchbox" name="searchForm" on-outside-element-click="show=false">
+    <form novalidate class="searchbox" name="searchForm" on-outside-element-click="show=false" ng-submit="search()">
         <div class="search">
             <input type="text" class="tbSearch" ng-model="searchText" name="searchText"
                    placeholder="Tìm kiếm...">
-            <input type="submit" value="" class="btnSearch">
+            <input type="submit" value="" class="btnSearch" ng-click="search()">
         </div>
         <div class="search-result" ng-show="show==true">
             <div class="result-box">
                 <div class="more">
-                    Tìm kiếm với "{{searchText}}"...
+                    <a href ng-click="search()">
+                        Tìm kiếm với "{{searchText}}"...
+                    </a>
                 </div>
                 <ul>
                     <li ng-repeat="song in songs" class="search-song"  >
@@ -43,9 +45,9 @@
         </div>
     </form>
     <div ng-show="user.username">
-        <div class="menu-item right"><a href="">{{user.username}}</a></div>
+        <div class="menu-item right"><a href="" ng-click="logout()">Đăng xuất</a></div>
         <div class="logout"></div>
-        <div class="menu-item right"><a href="">Playlist của tôi</a></div>
+        <div class="menu-item right"><a href="#/myplaylist">Playlist của {{user.username}}</a></div>
     </div>
     <div ng-show="!user.username">
         <div class="menu-item right"><a href="" ng-click="login()">Đăng nhập / Đăng kí</a></div>

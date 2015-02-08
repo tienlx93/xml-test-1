@@ -1,0 +1,76 @@
+<div class="lyrics" ng-class="{show:d.showLyrics}">
+    <div class="artist-box" ng-show="artist.name">
+        <div class="lyrics-header">
+            <div class="title-box">
+                <div class="title">Thông tin ca sĩ</div>
+            </div>
+            <div class="clear-float"></div>
+        </div>
+        <div>
+            <div class="lyrics-title">{{artist.name}}</div>
+            <div class="data" ng-bind-html="artist.info | to_trusted"></div>
+            <div class="data bio" ng-bind-html="artist.bio | to_trusted" ng-class="{hide:hideBio}" ng-click="hideBio=!hideBio"></div>
+        </div>
+    </div>
+
+
+    <div class="lyrics-box">
+        <div class="lyrics-header">
+            <div class="title-box">
+                <div class="title">Lời bài hát</div>
+            </div>
+            <div class="clear-float"></div>
+        </div>
+        <div class="lyrics-title">{{song.Title}}</div>
+        <div class="data" ng-bind-html="song.Lyrics | to_trusted"></div>
+    </div>
+
+</div>
+
+<div class="lyrics-toggle" ng-click="d.showLyrics=!d.showLyrics" ng-show="currentSong.Id">
+    <i class="fa" ng-class="{'fa-caret-down':!d.showLyrics,'fa-caret-up':d.showLyrics}"> Lời bài hát</i>
+</div>
+
+<div id="player" ng-include="'template/player.html'" charset="utf-8"></div>
+
+<div class="playlist">
+    <div class="playlist-function">
+        <div class="save">
+            <a href="" ng-click="saveList()" class="save">
+                <img src="img/save.png"><span>Lưu ...</span>
+            </a>
+        </div>
+        <div class="remove">
+            <a href="" ng-click="removeList()" class="remove">
+                <img src="img/remove.png"><span>Xóa</span>
+            </a>
+        </div>
+        <div class="clear-float"></div>
+    </div>
+    <ul dnd-list="songList">
+        <li ng-if="songList.length==0" style="padding: 5px">
+            Xin mời thêm bài hát vào playlist hoặc chọn mới playlist
+        </li>
+        <li ng-repeat="song in songList track by $index"
+            dnd-draggable="song"
+            dnd-moved="songList.splice($index, 1)"
+            dnd-effect-allowed="move"
+            dnd-selected=""
+            ng-class="{'selected': currentSong.Id === song.Id}"
+            ng-mouseover="song.hover=true" ng-mouseout="song.hover=false">
+            <span class="no-index" ng-class="{'error':song.error}">{{$index+1}}.</span>
+            <a href="" ng-click="chooseSong($index)">{{song.Title}}</a> -
+            <a href="">{{song.Artist}}</a>
+
+            <div class="functions" ng-class="{'hover':song.hover}">
+                <div class="remove">
+                    <a href="" ng-click="remove($index)">
+                        <img src="img/remove.png">
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="clear-float"></div>

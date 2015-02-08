@@ -103,3 +103,54 @@
     }
   }
 }
+
+.lyrics {
+  height: 700px;
+  overflow-y: scroll;
+  position: absolute;
+  background: white;
+  z-index: 1;
+  top: 0;
+  right: 368px;
+  -webkit-transition: 0.5s ease-in-out;
+  width: 0;
+  .data {
+    width: 550px;
+    padding: 20px;
+    background: white;
+  }
+  .lyrics-header {
+    margin: 10px;
+  }
+  &.show {
+    width: 592px;
+    box-shadow: 0 0 5px #C8C8C8;
+    border: 1px solid #CCC;
+  }
+  .lyrics-title {
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+.lyrics-toggle {
+  position: absolute;
+  transform: rotate(90deg);
+  z-index: 1;
+  top: 163px;
+  left: -48px;
+  background: #bafacf;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+}
+.bio {
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  &.hide {
+    height: 0;
+  }
+}

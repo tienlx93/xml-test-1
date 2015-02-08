@@ -1,9 +1,8 @@
-controllers.controller('MainController', ['$scope', '$filter', 'SongListService', 'Api',
-    function ($scope, $filter, SongListService, Api) {
+controllers.controller('MainController', ['$scope', '$filter', '$routeParams', 'SongListService', 'Api', 'SearchService', 'ErrorService',
+    function ($scope, $filter, $routeParams, SongListService, Api, SearchService, ErrorService) {
         $scope.display = {};
-        $scope.display.playlist = false;
-        $scope.display.category = true;
-        $scope.sortType = 'Title';
+
+        $scope.sortType = '';
         $scope.songs = [];
         var fullList = [];
         $scope.filteredSongs = [];
@@ -17,7 +16,7 @@ controllers.controller('MainController', ['$scope', '$filter', 'SongListService'
             return 0;
         };
 
-        $scope.$watch('currentPage + numPerPage + songs.length', function () {
+        $scope.$watch('currentPage + numPerPage + songs.length + sortType', function () {
             var begin = (($scope.currentPage - 1) * $scope.numPerPage);
             var end = begin + $scope.numPerPage;
 
@@ -53,7 +52,7 @@ controllers.controller('MainController', ['$scope', '$filter', 'SongListService'
         // End Category
 
         //Begin Get songs
-        Api.getTopSongs(function (data) {
+        var addToSongList = function (data) {
             fullList = $scope.songs = data;
             for (var i = 0; i < fullList.length; i++) {
                 var category = fullList[i].category;
@@ -77,7 +76,64 @@ controllers.controller('MainController', ['$scope', '$filter', 'SongListService'
             $scope.numPages = function () {
                 return Math.ceil($scope.songs.length / $scope.numPerPage);
             };
-        });
+        };
+
+        var url = window.location.hash;
+        $scope.viewType = {};
+
+        if(url.lastIndexOf("topsongs")>=0) {
+            $scope.viewType.topSong = true;
+            $scope.display.playlist = false;
+            $scope.display.category = false;
+            $scope.display.song = true;
+            $scope.numPerPage = 20;
+            Api.getTopForty(function (data) {
+                addToSongList(data);
+            });
+            $scope.url = BACK_END_URL + "index.jsp";
+            $scope.playList = function () {
+                var pl = [];
+                for (var i = 0; i < fullList.length; i ++){
+                    pl.push({
+                        'Id': fullList[i].id,
+                        'Title': fullList[i].title,
+                        'Artist': fullList[i].artist
+                    });
+                }
+                SongListService.songList = pl;
+            };
+
+        } else {
+            $scope.display.playlist = false;
+            $scope.display.category = true;
+            $scope.display.song = true;
+            if (url.lastIndexOf("search") > 0) {
+                $scope.viewType.search = true;
+                var query = $routeParams.query;
+                $scope.searchText = query;
+                SearchService.requestFullSearch(query, function (data) {
+                    addToSongList(data);
+                });
+            } else {
+                $scope.viewType.main = true;
+                Api.getTopSongs(function (data) {
+                    addToSongList(data);
+                });
+            }
+        }
+
+
+
+        //Order
+        $scope.sort = function (type) {
+            if (type == "play") {
+                $scope.sortType = "play";
+                $scope.songs = $filter('orderBy')($scope.songs, '-playCount');
+            } else {
+                $scope.sortType = "title";
+                $scope.songs = $filter('orderBy')($scope.songs, 'title');
+            }
+        };
 
 
         $scope.$watch('selectedCat.id', function () {
@@ -96,8 +152,8 @@ controllers.controller('MainController', ['$scope', '$filter', 'SongListService'
 
         $scope.$watch('songs.length', function () {
             $scope.currentPage = 1;
+            $scope.sortType = "";
         });
-
 
 
         //Add to playlist DONE
@@ -105,6 +161,8 @@ controllers.controller('MainController', ['$scope', '$filter', 'SongListService'
             var song = getSong(i);
             if (song && !SongListService.getSong(song.Id)) {
                 SongListService.songList.splice(SongListService.getCurrentSong() + 1, 0, song);
+            } else {
+                ErrorService.showError("Bài hát đã có trong danh sách");
             }
         };
 
@@ -112,13 +170,20 @@ controllers.controller('MainController', ['$scope', '$filter', 'SongListService'
             var song = getSong(i);
             if (song && !SongListService.getSong(song.Id)) {
                 SongListService.songList.push(song);
+            } else {
+                ErrorService.showError("Bài hát đã có trong danh sách");
             }
         };
 
 
         var getSong = function (i) {
-            var index = $scope.numPerPage * ($scope.currentPage - 1) + i;
-            var result = $scope.songs[index];
+            var result;
+            for (var j = 0; j < $scope.songs.length; j++) {
+                if ($scope.songs[j].id == i) {
+                    result = $scope.songs[j];
+                    break;
+                }
+            }
             if (!result) {
                 return null;
             } else {

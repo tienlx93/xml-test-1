@@ -5,21 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6c6ad8-69d8-47bd-8d30-213357dfb1c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/ApiService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/player.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/InputPopupController.js" afterPath="$PROJECT_DIR$/js/controllers/InputPopupController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/services/ErrorService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/controllers/PlaylistController.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/playlist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/AccountService.js" afterPath="$PROJECT_DIR$/js/services/AccountService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/ApiService.js" afterPath="$PROJECT_DIR$/js/services/ApiService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/MainController.js" afterPath="$PROJECT_DIR$/js/controllers/MainController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/MenuController.js" afterPath="$PROJECT_DIR$/js/controllers/MenuController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/PlayerController.js" afterPath="$PROJECT_DIR$/js/controllers/PlayerController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/SearchService.js" afterPath="$PROJECT_DIR$/js/services/SearchService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/SongListService.js" afterPath="$PROJECT_DIR$/js/services/SongListService.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/core.less" afterPath="$PROJECT_DIR$/css/core.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/header.less" afterPath="$PROJECT_DIR$/css/header.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/main.html" afterPath="$PROJECT_DIR$/template/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.less" afterPath="$PROJECT_DIR$/css/main.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/menu.html" afterPath="$PROJECT_DIR$/template/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/player.html" afterPath="$PROJECT_DIR$/template/player.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/player.less" afterPath="$PROJECT_DIR$/css/player.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/popup.less" afterPath="$PROJECT_DIR$/css/popup.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MusicLibraryFront.iws" />
@@ -43,37 +47,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="28" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-14.431373" vertical-offset="845" max-vertical-offset="1802">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/controllers/MenuController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="10" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="124" selection-start="2321" selection-end="2321" vertical-scroll-proportion="-16.692308" vertical-offset="586" max-vertical-offset="1530">
+            <state line="76" column="65" selection-start="3312" selection-end="3312" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2176">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
+      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="24" selection-start="522" selection-end="522" vertical-scroll-proportion="0.48166665" vertical-offset="0" max-vertical-offset="1020">
+            <state line="70" column="19" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="871" max-vertical-offset="2873">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlaylistController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/PlaylistController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="15" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="710" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
@@ -82,16 +77,25 @@
       <file leaf-file-name="MainController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers/MainController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="69" selection-start="3705" selection-end="3705" vertical-scroll-proportion="0.0" vertical-offset="1729" max-vertical-offset="2329">
+            <state line="99" column="45" selection-start="3341" selection-end="3341" vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="3434">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PlayerController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/PlayerController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="75" column="14" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2601">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="889" selection-end="889" vertical-scroll-proportion="-5.730769" vertical-offset="123" max-vertical-offset="2125">
+            <state line="64" column="0" selection-start="3482" selection-end="3482" vertical-scroll-proportion="0.9409722" vertical-offset="546" max-vertical-offset="1428">
               <folding />
             </state>
           </provider>
@@ -100,16 +104,16 @@
       <file leaf-file-name="ApiService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/ApiService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="30" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+            <state line="107" column="28" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0" vertical-offset="1819" max-vertical-offset="2278">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SongListService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/SongListService.js">
+      <file leaf-file-name="menu.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/menu.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="0" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.0" vertical-offset="726" max-vertical-offset="1326">
+            <state line="7" column="46" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1037">
               <folding />
             </state>
           </provider>
@@ -134,22 +138,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/controllers/InputPopupController.js" />
-        <option value="$PROJECT_DIR$/js/controllers/LoginController.js" />
-        <option value="$PROJECT_DIR$/template/loginPopup.html" />
-        <option value="$PROJECT_DIR$/css/popup.less" />
-        <option value="$PROJECT_DIR$/js/controllers/PlayerController.js" />
-        <option value="$PROJECT_DIR$/js/controllers/MenuController.js" />
-        <option value="$PROJECT_DIR$/js/services/AccountService.js" />
-        <option value="$PROJECT_DIR$/template/menu.html" />
-        <option value="$PROJECT_DIR$/css/header.less" />
-        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/css/player.less" />
+        <option value="$PROJECT_DIR$/js/services/ErrorService.js" />
         <option value="$PROJECT_DIR$/js/services/SongListService.js" />
-        <option value="$PROJECT_DIR$/js/services/ApiService.js" />
+        <option value="$PROJECT_DIR$/template/playlist.html" />
+        <option value="$PROJECT_DIR$/css/core.less" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/services/AccountService.js" />
+        <option value="$PROJECT_DIR$/js/controllers/MenuController.js" />
+        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/template/menu.html" />
         <option value="$PROJECT_DIR$/css/main.less" />
         <option value="$PROJECT_DIR$/template/main.html" />
         <option value="$PROJECT_DIR$/js/controllers/MainController.js" />
-        <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/js/services/ApiService.js" />
+        <option value="$PROJECT_DIR$/js/controllers/PlaylistController.js" />
+        <option value="$PROJECT_DIR$/js/controllers/PlayerController.js" />
       </list>
     </option>
   </component>
@@ -323,34 +327,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MusicLibraryFront" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml-test-1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fake-api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MusicLibraryFront" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml-test-1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -364,7 +340,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Downloads/Compressed/Webapp" />
     <property name="FullScreen" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.searchVisible" value="true" />
@@ -372,9 +348,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My Documents\Documents\_XML\Project\xml-test-1\js\controllers" />
       <recent name="D:\My Documents\Documents\_XML\Project\xml-test-1\lib\angularjs" />
       <recent name="D:\My Documents\Documents\_XML\Project\xml-test-1\css" />
-      <recent name="D:\My Documents\Documents\_XML\Project\xml-test-1\js\controllers" />
       <recent name="D:\My Documents\Documents\_XML\Project\xml-test-1\js\services" />
       <recent name="D:\My Documents\Documents\_XML\Project\MusicLibraryFront\fake-api" />
     </key>
@@ -442,12 +418,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26656738" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -458,6 +433,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -475,107 +451,102 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/controllers/PlayerController.js">
+    <entry file="file://$PROJECT_DIR$/js/services/SongListService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="1682" max-vertical-offset="2261">
-          <folding />
-        </state>
+        <state line="46" column="10" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1377" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/player.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1870">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1870" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/player.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="13" selection-start="1005" selection-end="1005" vertical-scroll-proportion="-1.8421053" vertical-offset="676" max-vertical-offset="2737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/playlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="42" selection-start="2479" selection-end="2479" vertical-scroll-proportion="-12.461538" vertical-offset="730" max-vertical-offset="1377" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/core.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="0" selection-start="1737" selection-end="1737" vertical-scroll-proportion="0.2456446" vertical-offset="1627" max-vertical-offset="2227">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/services/AccountService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="30" selection-start="2380" selection-end="2380" vertical-scroll-proportion="0.235" vertical-offset="1134" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="99" selection-start="1085" selection-end="1110" vertical-scroll-proportion="-9.807693" vertical-offset="153" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/player.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="21" selection-start="172" selection-end="172" vertical-scroll-proportion="0.24772313" vertical-offset="0" max-vertical-offset="1870">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/header.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="29" selection-start="2023" selection-end="2023" vertical-scroll-proportion="1.0619308" vertical-offset="1423" max-vertical-offset="2176">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/SearchService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="10" selection-start="126" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="889" selection-end="889" vertical-scroll-proportion="-5.730769" vertical-offset="123" max-vertical-offset="2125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/ApiService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/SongListService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="0" selection-start="2310" selection-end="2310" vertical-scroll-proportion="0.0" vertical-offset="726" max-vertical-offset="1326">
-          <folding />
-        </state>
+        <state line="31" column="38" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/MenuController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="10" selection-start="1250" selection-end="1250" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156">
+        <state line="44" column="37" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1445" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="43" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1343" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/menu.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="46" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1037">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="28" selection-start="1540" selection-end="1540" vertical-scroll-proportion="-14.431373" vertical-offset="845" max-vertical-offset="1802">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/MainController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="69" selection-start="3705" selection-end="3705" vertical-scroll-proportion="0.0" vertical-offset="1729" max-vertical-offset="2329">
+        <state line="70" column="19" selection-start="1141" selection-end="1141" vertical-scroll-proportion="0.0" vertical-offset="871" max-vertical-offset="2873">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="124" selection-start="2321" selection-end="2321" vertical-scroll-proportion="-16.692308" vertical-offset="586" max-vertical-offset="1530">
+        <state line="76" column="65" selection-start="3312" selection-end="3312" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2176">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
+    <entry file="file://$PROJECT_DIR$/js/services/ApiService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="24" selection-start="522" selection-end="522" vertical-scroll-proportion="0.48166665" vertical-offset="0" max-vertical-offset="1020">
+        <state line="107" column="28" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0" vertical-offset="1593" max-vertical-offset="2278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/PlaylistController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="15" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0" vertical-offset="710" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/MainController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="45" selection-start="3341" selection-end="3341" vertical-scroll-proportion="0.0" vertical-offset="1232" max-vertical-offset="3434">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/PlayerController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="14" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2601">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="0" selection-start="3482" selection-end="3482" vertical-scroll-proportion="0.9409722" vertical-offset="546" max-vertical-offset="1428">
           <folding />
         </state>
       </provider>

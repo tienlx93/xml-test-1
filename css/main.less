@@ -4,29 +4,36 @@
   .main-item {
     margin: 5px 0 20px 0;
   }
-  .title-box {
-    width: 100%;
-    border-top: #d5d5d5 solid 2px;
+}
+.title-box {
+  width: 100%;
+  border-top: #d5d5d5 solid 2px;
+  float: left;
+  .title {
+    display: block;
     float: left;
-    .title {
-      display: block;
-      float: left;
-      padding: 0 20px 0 10px;
-      font-size: 18px;
-      line-height: 30px;
-      border-top: #157abc solid 2px;
-      margin-top: -2px;
-      color: #23262d;
-    }
-    .sort {
-      float: right;
-      text-align: left;
-      padding: 10px 0px;
-      white-space: nowrap;
+    padding: 0 20px 0 10px;
+    font-size: 18px;
+    line-height: 30px;
+    border-top: #157abc solid 2px;
+    margin-top: -2px;
+    color: #23262d;
+  }
+  .sort {
+    float: right;
+    text-align: left;
+    padding: 10px;
+    white-space: nowrap;
+    a {
+      &:hover {
+        color: #ffcd61;
+      }
+      &.disabled {
+        color: #ffb72e;
+      }
     }
   }
 }
-
 .category-list {
   .list {
     li {
@@ -47,20 +54,31 @@
 }
 
 .song-list {
+  .loading {
+    padding: 10px;
+    float: left;
+    margin-left: 160px;
+  }
   .list {
     ul {
       margin-top: 20px;
     }
     li {
-      height: 50px;
-      padding: 2px 5px;
+      padding: 5px 5px;
       font-weight: normal;
       border-bottom: 1px solid #a6a6a6;
-
+      position: relative;
+      height: 45px;
       .detail {
         float: left;
         padding: 10px;
         width: 75%;
+      }
+      .play-count {
+        position: absolute;
+        top: 18px;
+        left: 420px;
+        color: rgb(156, 156, 156);
       }
     }
   }
@@ -98,4 +116,49 @@
   .next{
     float: right;
   }
+}
+
+.playlist-list {
+  li {
+    float: left;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    .text {
+      width: 120px;
+      .title {
+        font-weight: bold;
+      }
+      .subtitle {
+        font-size: smaller;
+      }
+    }
+    .img-container {
+      width: 100px;
+      height: 100px;
+      margin: 0 10px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .remove-playlist {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: 0.5s ease-in-out;
+    top: 113px;
+    right: 20px;
+    &.hover {
+      opacity: 1;
+    }
+    .remove {
+      width: 20px;
+      height: 20px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+
 }

@@ -15,7 +15,19 @@ app.config(['$routeProvider', '$httpProvider',
                 templateUrl: 'template/main.html',
                 controller: 'MainController'
             }).
-            ('/search/{}', {
+            when('/search/:query', {
+                templateUrl: 'template/main.html',
+                controller: 'MainController'
+            }).
+            when('/playlist', {
+                templateUrl: 'template/main.html',
+                controller: 'PlaylistController'
+            }).
+            when('/myplaylist', {
+                templateUrl: 'template/main.html',
+                controller: 'PlaylistController'
+            }).
+            when('/topsongs', {
                 templateUrl: 'template/main.html',
                 controller: 'MainController'
             }).
@@ -27,6 +39,13 @@ app.config(['$routeProvider', '$httpProvider',
 var controllers = angular.module('controllers', []);
 var services = angular.module('services', []);
 var directives = angular.module('directives', []);
+
+controllers.controller('AppController', ['$rootScope', '$scope',
+    function ($rootScope, $scope) {
+        $rootScope.d = {};
+        $rootScope.d.showLyrics = false;
+    }]);
+
 
 app.filter('to_trusted', ['$sce', function ($sce) {
     return function (text, data) {

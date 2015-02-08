@@ -12,7 +12,20 @@ services.factory("SearchService", ['$http', '$location',
             })
                 .success(function (data) {
                     callback(data);
+                })
+        };
 
+        services.requestFullSearch = function(text, callback){
+            $http({
+                method: 'GET',
+                url: BACK_END_URL + 'Search',
+                params: {
+                    'query': text,
+                    'method': ''
+                }
+            })
+                .success(function (data) {
+                    callback(data);
                 })
         };
 

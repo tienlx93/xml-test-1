@@ -72,9 +72,7 @@ table {
   width: 980px;
   margin: auto;
   margin-top: 30px;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 1px 1px 10px 0px #ABAAAA;
+
 }
 
 .box {
@@ -93,5 +91,36 @@ table {
     float: right;
     margin-right: 10px;
     width: 350px;
+  }
+}
+
+#ng-view {
+  overflow: hidden;
+  -webkit-transition: 0.5s ease-in-out;
+  &.hide {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+#error {
+  position: fixed;
+  bottom: 20px;
+  margin: auto;
+  height: 20px;
+  line-height: 20px;
+  background: #8e8e8e;
+  border-bottom: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-radius: 2px;
+  color: #ffffff;
+  left: 0;
+  right: 0;
+  padding: 5px 15px;
+  width: 20%;
+  text-align: center;
+  -webkit-transition: 0.5s ease-in-out;
+  &.hide {
+    opacity: 0;
   }
 }

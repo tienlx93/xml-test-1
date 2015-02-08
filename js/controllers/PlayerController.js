@@ -1,19 +1,23 @@
 /**
  * Created by tienl_000 on 29/01/15.
  */
-controllers.controller('PlayerController', ['$scope', '$http', 'SongListService', 'InputPopupService', 'AccountService',
-    function ($scope, $http, SongListService, InputPopupService, AccountService) {
+controllers.controller('PlayerController', ['$scope', '$rootScope', '$http', 'SongListService', 'InputPopupService', 'AccountService', 'Api',
+    function ($scope, $rootScope, $http, SongListService, InputPopupService, AccountService, Api) {
         $scope.song = {}; //song for music player
         $scope.currentSong = SongListService.currentSong; //song for playlist
         $scope.songList = SongListService.songList; //playlist
+        $scope.artist = {}; //Current artist
+        $scope.hideBio = true;
+        var playState = false;
 
         $scope.$watch(function () {
             return SongListService.songList.length;
         }, function () {
             $scope.songList = SongListService.songList; //playlist
+            if (playState == false && $scope.songList.length > 0) {
+                playSong($scope.songList[0]);
+            }
         });
-
-
 
         $scope.chooseSong = function (i) {
             playSong($scope.songList[i]);
@@ -55,11 +59,14 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
 
             if ($scope.songList.length == 0) {
                 songError();
+                playState = false;
             }
         };
 
         $scope.removeList = function () {
             SongListService.songList = [];
+            songError();
+            playState = false;
         };
 
         var doSaveList = function () {
@@ -84,6 +91,19 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
 
         var playSong = function (song) {
             $scope.currentSong = song;
+            playState = true;
+            var shortArtist = $scope.currentSong.Artist;
+            var multi = $scope.currentSong.Artist.indexOf("ft.");
+
+            if (multi > 0) {
+                shortArtist = shortArtist.substring(0, multi - 1);
+            }
+            Api.getArtist(shortArtist.trim(), function (artist) {
+                $scope.artist = artist;
+            });
+            Api.playCount(song.Id, function(){
+                console.log("Update success");
+            });
             SongListService.currentSong = song;
             /*if (song.error) {
              return;
@@ -91,7 +111,7 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
             $("#jquery_jplayer_1").on($.jPlayer.event.error, function (event) {
                 switch (event.jPlayer.error.type) {
                     case $.jPlayer.error.URL:
-                        //songError();
+                        songError();
                         break;
                     case $.jPlayer.error.NO_SOLUTION:
                         break;
@@ -121,7 +141,7 @@ controllers.controller('PlayerController', ['$scope', '$http', 'SongListService'
             });
             $scope.currentSong.error = true;
             $scope.song = {'AlbumArt': 'img/musicstore.png'}
-            $scope.nextSong();
+            //$scope.nextSong();
         }
     }]);
 

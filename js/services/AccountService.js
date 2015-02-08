@@ -21,6 +21,19 @@ services.factory("AccountService", ['$http', '$location', 'InputPopupService',
                 });
         };
 
+        account.logout = function (cb) {
+            $http({
+                method: 'GET',
+                url: BACK_END_URL + 'AccountController',
+                params: {
+                    'action': 'Logout'
+                }
+            }).success(function () {
+                    account.user = {};
+                    cb();
+                });
+        };
+
 
         var login = function (user, callback) {
             $http({

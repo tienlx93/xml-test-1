@@ -1,5 +1,5 @@
-services.factory("SongListService", ['$http', 'AccountService',
-    function ($http, AccountService) {
+services.factory("SongListService", ['$http', 'AccountService', 'ErrorService',
+    function ($http, AccountService, ErrorService) {
         var services = {};
         services.songList = [];
         services.currentSong = {};
@@ -39,6 +39,9 @@ services.factory("SongListService", ['$http', 'AccountService',
                 .success(function (data) {
                     if (data == "Error") {
                         console.log("error");
+                        ErrorService.showError("Lưu thất bại");
+                    } else {
+                        ErrorService.showError("Lưu thành công");
                     }
                 });
         };

@@ -1,18 +1,34 @@
 <div class="main-content">
     <div class="playlist-list main-item" ng-if="display.playlist">
         <div class="title-box">
-            <div class="title">Playlist</div>
+            <div class="title">
+                <span ng-show="!myPlaylist">Hot Playlist</span>
+                <span ng-show="myPlaylist">Playlist của tôi</span>
+            </div>
         </div>
         <div class="clear-float"></div>
         <div class="list">
             <ul>
-                <li>ABC</li>
-                <li>ABC</li>
-                <li>ABC</li>
-                <li>ABC</li>
-                <li>ABC</li>
-                <li>ABC</li>
-                <li>ABC</li>
+                <li ng-repeat="item in playlists" ng-mouseover="item.hover=true" ng-mouseout="item.hover=false">
+                    <a href ng-click="showDetail(item.id)">
+                        <div class="img-container">
+                            <img class="icon" src="img/albumart-cd.png">
+                        </div>
+                        <div class="remove-playlist" ng-class="{'hover':item.hover}" ng-show="myPlaylist">
+                            <div class="remove">
+                                <a href="" ng-click="removePlaylist(item)">
+                                    <img src="img/remove.png">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <div class="title">{{item.name}}</div>
+                            <div class="subtitle">{{item.accountName}}</div>
+                        </div>
+                    </a>
+
+                </li>
+
             </ul>
         </div>
         <div class="clear-float"></div>
@@ -38,23 +54,42 @@
 
     <div class="song-list main-item">
         <div class="title-box">
-            <div class="title">Bài hát</div>
-            <div class="sort">
-                <a href ng-click="sortType=''">Ngẫu nhiên</a> |
-                <a href ng-click="sortType='playCount'">Lượt nghe</a>
+            <div class="title">
+                <span ng-if="viewType.topSong">Bảng xếp hạng top 40</span>
+                <span ng-if="viewType.main">Bài hát</span>
+                <span ng-if="display.playlist">Bài hát</span>
+                <span ng-if="viewType.search">Kết quả cho "{{searchText}}"</span>
             </div>
+            <div class="loading" ng-show="filteredSongs.length==0 && !display.playlist">
+                <i class="fa fa-spinner fa-pulse"></i>Đang tải...
+            </div>
+            <div class="sort" ng-show="!(display.playlist || viewType.topSong)">
+                <a href ng-click="sort()" ng-class="{disabled: sortType=='title'}">Tên bài hát</a> |
+                <a href ng-click="sort('play')" ng-class="{disabled: sortType=='play'}">Lượt nghe</a>
+            </div>
+
+            <div class="sort" ng-show="display.playlist && filteredSongs.length > 0">
+                <a href ng-click="playList()" >Chơi playlist</a> |
+                <a href ng-click="addList()" >Thêm vào playlist hiện</a>
+            </div>
+
+            <div class="sort" ng-show="viewType.topSong">
+                <a href ng-click="playList()" >Chơi bảng xếp hạng</a> |
+                <a href="{{url}}" target="_blank" >Xem báo cáo...</a>
+            </div>
+
             <div class="clear-float"></div>
         </div>
         <div class="clear-float"></div>
         <div class="list">
-            <div class="nav">
+            <div class="nav" ng-show="!display.playlist">
                 <div class="prev" ng-click="prevPage()" ng-class="{disabled:currentPage==1}">Trước</div>
                 <span>Trang {{currentPage}} / {{numPages()}}</span>
-                <div class="next" ng-click="nextPage()" ng-class="{disabled:currentPage==numPages()}">Kế tiếp</div>
+                <div class="next" ng-click="nextPage()" ng-class="{disabled:currentPage>=numPages()}">Kế tiếp</div>
             </div>
             <div class="clear-float"></div>
             <ul>
-                <li ng-repeat="song in filteredSongs | orderBy:sortType" class="main-song search-song">
+                <li ng-repeat="song in filteredSongs track by $index" class="main-song search-song">
                     <a href="">
                         <div class="img-container">
                             <img class="icon"
@@ -66,12 +101,15 @@
                             <div class="title">{{song.title}}</div>
                             <div class="subtitle">{{song.artist}}</div>
                         </div>
+                        <div class="play-count" ng-show="song.playCount!=null">
+                            <i class="fa fa-headphones"> {{song.playCount | number}}</i>
+                        </div>
                         <div class="functions">
-                            <a href="" ng-click="addFirst($index)">
+                            <a href="" ng-click="addFirst(song.id)">
                                 <div class="addFirst" title="Thêm vào tiếp theo danh sách"></div>
                             </a>
 
-                            <a href="" ng-click="addLast($index)">
+                            <a href="" ng-click="addLast(song.id)">
                                 <div class="addLast" title="Thêm vào cuối danh sách"></div>
                             </a>
                         </div>
