@@ -6,7 +6,7 @@
         </div>
 
         <label for="email">&nbsp;</label>
-        <input class="popup-text" name="popupText" id="email" type="text" ng-model="input.email" placeholder="Email"
+        <input class="popup-text" name="popupText" id="email" type="email" ng-model="input.email" placeholder="Email"
                    required=""/>
         <br/>
         <label for="password">&nbsp;</label>
@@ -18,10 +18,10 @@
             Tôi chưa có tài khoản
         </label>
 
-        <div ng-show="input.noAcc">
+        <div ng-if="input.noAcc">
             <label for="username">&nbsp;</label>
             <input class="popup-text" name="popupText" id="username" type="text" ng-model="input.username"
-                   placeholder="Tên tài khoản" />
+                   placeholder="Tên tài khoản" required/>
         </div>
 
         <div class="error" ng-show="error">

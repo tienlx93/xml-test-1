@@ -54,7 +54,8 @@ services.factory("Api", ['$http', 'AccountService',
                 method: 'GET',
                 url: BACK_END_URL + 'PlaylistController',
                 params: {
-                    'action': 'getTopPlaylist'
+                    'action': 'getTopPlaylist',
+                    'limit': 10
                 }
             })
                 .success(function (data) {
@@ -115,7 +116,7 @@ services.factory("Api", ['$http', 'AccountService',
         services.playlistCount = function(id, callback){
             $http({
                 method: 'GET',
-                url: BACK_END_URL + 'PlaylistController',
+                url: BACK_END_URL + 'CounterController',
                 params: {
                     'action': 'Playlist',
                     'id': id

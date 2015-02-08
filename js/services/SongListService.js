@@ -1,28 +1,28 @@
 services.factory("SongListService", ['$http', 'AccountService', 'ErrorService',
     function ($http, AccountService, ErrorService) {
-        var services = {};
-        services.songList = [];
-        services.currentSong = {};
-        services.getCurrentSong = function () {
-            for (var i = 0; i < services.songList.length; i++) {
-                if (services.songList[i].Id === services.currentSong.Id) {
+        var songListService = {};
+        songListService.songList = [];
+        songListService.currentSong = {};
+        songListService.getCurrentSong = function () {
+            for (var i = 0; i < songListService.songList.length; i++) {
+                if (songListService.songList[i].Id === songListService.currentSong.Id) {
                     return i;
                 }
             }
             return -1;
         };
-        services.getSong = function (Id) {
-            for (var i = 0; i < services.songList.length; i++) {
-                if (services.songList[i].Id === Id) {
-                    return services.songList[i];
+        songListService.getSong = function (Id) {
+            for (var i = 0; i < songListService.songList.length; i++) {
+                if (songListService.songList[i].Id === Id) {
+                    return songListService.songList[i];
                 }
             }
             return null;
         };
-        services.saveList = function (name) {
+        songListService.saveList = function (name) {
             var list = [];
-            for (var i = 0; i < services.songList.length; i++) {
-                var Id = services.songList[i].Id;
+            for (var i = 0; i < songListService.songList.length; i++) {
+                var Id = songListService.songList[i].Id;
                 list.push(Id);
             }
             $http({
@@ -46,17 +46,22 @@ services.factory("SongListService", ['$http', 'AccountService', 'ErrorService',
                 });
         };
 
+        songListService.init = false;
         var getXMLPlaylist = function (id) {
             $http({
                 method: 'GET',
                 url: BACK_END_URL + 'playlist/' + id + '.xml'
             }).success(function (data) {
-                    services.songList = data.SongList.List.Song;
+                    songListService.songList = data.SongList.List.Song;
+                    songListService.init = true;
+                    setTimeout(function () {
+                        songListService.init = false;
+                    }, 500);
                 });
         };
 
 
-        services.loadLastPlaylist = function () {
+        songListService.loadLastPlaylist = function () {
             $http({
                 method: 'GET',
                 url: BACK_END_URL + 'PlaylistController',
@@ -72,5 +77,5 @@ services.factory("SongListService", ['$http', 'AccountService', 'ErrorService',
         };
 
 
-        return services;
+        return songListService;
     }]);

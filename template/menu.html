@@ -24,7 +24,9 @@
                     <li ng-repeat="song in songs" class="search-song"  >
                         <a href="">
                             <div class="img-container">
-                                <img class="icon" ng-src="{{song.image}}" src="img/albumart-cd.png">
+                                <img class="icon"
+                                     ng-src="{{song.image.replace('STATIC_PATH_V3/images/singer_avatar.jpg','img/albumart-cd.png')}}"
+                                     src="img/albumart-cd.png">
                             </div>
 
                             <div class="detail">

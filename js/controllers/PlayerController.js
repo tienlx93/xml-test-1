@@ -14,7 +14,7 @@ controllers.controller('PlayerController', ['$scope', '$rootScope', '$http', 'So
             return SongListService.songList.length;
         }, function () {
             $scope.songList = SongListService.songList; //playlist
-            if (playState == false && $scope.songList.length > 0) {
+            if (playState == false && $scope.songList.length > 0 && SongListService.init == false) {
                 playSong($scope.songList[0]);
             }
         });
@@ -105,6 +105,7 @@ controllers.controller('PlayerController', ['$scope', '$rootScope', '$http', 'So
                 console.log("Update success");
             });
             SongListService.currentSong = song;
+            song.error = false;
             /*if (song.error) {
              return;
              }*/

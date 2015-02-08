@@ -90,7 +90,7 @@ controllers.controller('MainController', ['$scope', '$filter', '$routeParams', '
             Api.getTopForty(function (data) {
                 addToSongList(data);
             });
-            $scope.url = BACK_END_URL + "index.jsp";
+            $scope.url = BACK_END_URL + "topsong.jsp";
             $scope.playList = function () {
                 var pl = [];
                 for (var i = 0; i < fullList.length; i ++){

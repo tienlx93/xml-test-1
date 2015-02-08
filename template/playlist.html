@@ -51,7 +51,7 @@
         <li ng-if="songList.length==0" style="padding: 5px">
             Xin mời thêm bài hát vào playlist hoặc chọn mới playlist
         </li>
-        <li ng-repeat="song in songList track by $index"
+        <li ng-repeat="song in songList"
             dnd-draggable="song"
             dnd-moved="songList.splice($index, 1)"
             dnd-effect-allowed="move"
