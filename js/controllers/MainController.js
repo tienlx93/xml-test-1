@@ -1,5 +1,7 @@
-controllers.controller('MainController', ['$scope', '$filter', '$routeParams', 'SongListService', 'Api', 'SearchService', 'ErrorService',
-    function ($scope, $filter, $routeParams, SongListService, Api, SearchService, ErrorService) {
+controllers.controller('MainController', ['$scope', '$filter', '$routeParams', '$rootScope', 'SongListService', 'Api', 'SearchService', 'ErrorService',
+    function ($scope, $filter, $routeParams, $rootScope, SongListService, Api, SearchService, ErrorService) {
+        $rootScope.d = {};
+        $rootScope.d.showLyrics = false;
         $scope.display = {};
 
         $scope.sortType = '';

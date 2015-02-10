@@ -1,5 +1,7 @@
-controllers.controller('PlaylistController', ['$scope', 'Api', 'SongListService', 'ErrorService',
-    function ($scope, Api, SongListService, ErrorService) {
+controllers.controller('PlaylistController', ['$scope', '$rootScope', 'Api', 'SongListService', 'ErrorService',
+    function ($scope, $rootScope, Api, SongListService, ErrorService) {
+        $rootScope.d = {};
+        $rootScope.d.showLyrics = false;
         $scope.display = {};
         $scope.display.playlist = true;
         $scope.display.category = false;
@@ -11,6 +13,7 @@ controllers.controller('PlaylistController', ['$scope', 'Api', 'SongListService'
         var url = window.location.hash;
 
         var loadList = function() {
+            $scope.filteredSongs = [];
             if (url.lastIndexOf("myplaylist") >= 0) {
                 $scope.myPlaylist = true;
                 Api.getMyPlaylist(function (data) {
@@ -95,6 +98,7 @@ controllers.controller('PlaylistController', ['$scope', 'Api', 'SongListService'
                     if (data == "Success"){
                         loadList();
                         ErrorService.showError("Xóa thành công");
+
                     } else {
                         ErrorService.showError("Xóa thất bại");
                     }

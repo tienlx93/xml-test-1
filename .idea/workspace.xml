@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c6c6ad8-69d8-47bd-8d30-213357dfb1c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/ApiService.js" afterPath="$PROJECT_DIR$/js/services/ApiService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/LoginController.js" afterPath="$PROJECT_DIR$/js/controllers/LoginController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/MainController.js" afterPath="$PROJECT_DIR$/js/controllers/MainController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/PlayerController.js" afterPath="$PROJECT_DIR$/js/controllers/PlayerController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/services/SongListService.js" afterPath="$PROJECT_DIR$/js/services/SongListService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/loginPopup.html" afterPath="$PROJECT_DIR$/template/loginPopup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/MenuController.js" afterPath="$PROJECT_DIR$/js/controllers/MenuController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers/PlaylistController.js" afterPath="$PROJECT_DIR$/js/controllers/PlaylistController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/header.less" afterPath="$PROJECT_DIR$/css/header.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/main.html" afterPath="$PROJECT_DIR$/template/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.less" afterPath="$PROJECT_DIR$/css/main.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/menu.html" afterPath="$PROJECT_DIR$/template/menu.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/playlist.html" afterPath="$PROJECT_DIR$/template/playlist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/popup.less" afterPath="$PROJECT_DIR$/css/popup.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MusicLibraryFront.iws" />
@@ -38,46 +36,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/template/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="39" selection-start="3504" selection-end="3504" vertical-scroll-proportion="0.22037037" vertical-offset="1275" max-vertical-offset="2176">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="856" selection-end="856" vertical-scroll-proportion="-3.4230769" vertical-offset="829" max-vertical-offset="2873">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerController.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PlayerController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers/PlayerController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="88" selection-start="834" selection-end="854" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="2618">
+            <state line="4" column="56" selection-start="228" selection-end="243" vertical-scroll-proportion="0.089701" vertical-offset="14" max-vertical-offset="2618">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file leaf-file-name="MenuController.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controllers/MenuController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="58" selection-start="3128" selection-end="3128" vertical-scroll-proportion="-1.8846154" vertical-offset="852" max-vertical-offset="1428">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApiService.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/services/ApiService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="118" column="54" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0" vertical-offset="1648" max-vertical-offset="2295">
+            <state line="25" column="40" selection-start="1061" selection-end="1069" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="1564">
               <folding />
             </state>
           </provider>
@@ -86,43 +57,7 @@
       <file leaf-file-name="SongListService.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/services/SongListService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="37" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1462">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginPopup.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/loginPopup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="765">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="menu.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/menu.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="37" selection-start="1377" selection-end="1377" vertical-scroll-proportion="-13.730769" vertical-offset="119" max-vertical-offset="1071">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="popup.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/popup.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="19" selection-start="965" selection-end="965" vertical-scroll-proportion="-7.45098" vertical-offset="691" max-vertical-offset="2550">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inputPopup.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/inputPopup.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="340">
+            <state line="3" column="38" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
               <folding />
             </state>
           </provider>
@@ -147,22 +82,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/core.less" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/js/services/AccountService.js" />
-        <option value="$PROJECT_DIR$/js/controllers/MenuController.js" />
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/js/controllers/PlaylistController.js" />
         <option value="$PROJECT_DIR$/css/main.less" />
         <option value="$PROJECT_DIR$/template/playlist.html" />
-        <option value="$PROJECT_DIR$/template/main.html" />
-        <option value="$PROJECT_DIR$/js/controllers/MainController.js" />
         <option value="$PROJECT_DIR$/js/controllers/PlayerController.js" />
         <option value="$PROJECT_DIR$/template/loginPopup.html" />
         <option value="$PROJECT_DIR$/css/popup.less" />
         <option value="$PROJECT_DIR$/js/services/SongListService.js" />
         <option value="$PROJECT_DIR$/js/services/ApiService.js" />
+        <option value="$PROJECT_DIR$/css/header.less" />
+        <option value="$PROJECT_DIR$/js/controllers/MainController.js" />
+        <option value="$PROJECT_DIR$/js/controllers/MenuController.js" />
         <option value="$PROJECT_DIR$/template/menu.html" />
+        <option value="$PROJECT_DIR$/js/controllers/PlaylistController.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/controllers/LoginController.js" />
+        <option value="$PROJECT_DIR$/template/main.html" />
       </list>
     </option>
   </component>
@@ -198,7 +133,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -228,20 +162,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="template" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MusicLibraryFront" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml-test-1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -329,6 +249,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,15 +333,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32973805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32747602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26656738" sideWeight="0.672524" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1787044" sideWeight="0.672524" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -429,6 +349,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32747602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -446,59 +367,21 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/services/AccountService.js">
+    <entry file="file://$PROJECT_DIR$/css/header.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="38" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/MenuController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="37" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="1445" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="43" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1343" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/playlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="39" selection-start="1968" selection-end="1968" vertical-scroll-proportion="-4.730769" vertical-offset="778" max-vertical-offset="1377">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="58" selection-start="3128" selection-end="3128" vertical-scroll-proportion="-1.8846154" vertical-offset="852" max-vertical-offset="1428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/PlayerController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="88" selection-start="834" selection-end="854" vertical-scroll-proportion="0.0" vertical-offset="14" max-vertical-offset="2618">
-          <folding />
-        </state>
+        <state line="30" column="28" selection-start="589" selection-end="589" vertical-scroll-proportion="0.6761364" vertical-offset="153" max-vertical-offset="2261" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers/MainController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="31" selection-start="3424" selection-end="3424" vertical-scroll-proportion="0.78869045" vertical-offset="1469" max-vertical-offset="3434">
+        <state line="2" column="8" selection-start="270" selection-end="329" vertical-scroll-proportion="0.06049822" vertical-offset="0" max-vertical-offset="3468">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers/PlaylistController.js">
+    <entry file="file://$PROJECT_DIR$/template/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="21" selection-start="2207" selection-end="2207" vertical-scroll-proportion="0.28342247" vertical-offset="965" max-vertical-offset="2057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="856" selection-end="856" vertical-scroll-proportion="-3.4230769" vertical-offset="829" max-vertical-offset="2873">
+        <state line="51" column="106" selection-start="2612" selection-end="2612" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1071">
           <folding />
         </state>
       </provider>
@@ -510,44 +393,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/PlaylistController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="38" selection-start="581" selection-end="581" vertical-scroll-proportion="0.108658746" vertical-offset="191" max-vertical-offset="2125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="80" selection-start="2803" selection-end="2803" vertical-scroll-proportion="-7.8461537" vertical-offset="561" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/AccountService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/LoginController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="63" selection-start="986" selection-end="986" vertical-scroll-proportion="0.0" vertical-offset="133" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/template/loginPopup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/popup.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="19" selection-start="965" selection-end="965" vertical-scroll-proportion="-7.45098" vertical-offset="691" max-vertical-offset="2550">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/SongListService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="37" selection-start="1898" selection-end="1898" vertical-scroll-proportion="0.0" vertical-offset="608" max-vertical-offset="1462">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/services/ApiService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="54" selection-start="3438" selection-end="3438" vertical-scroll-proportion="0.0" vertical-offset="1648" max-vertical-offset="2295">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/menu.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="37" selection-start="1377" selection-end="1377" vertical-scroll-proportion="-13.730769" vertical-offset="119" max-vertical-offset="1071">
+        <state line="11" column="44" selection-start="608" selection-end="608" vertical-scroll-proportion="0.65384614" vertical-offset="204" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="39" selection-start="3504" selection-end="3504" vertical-scroll-proportion="0.22037037" vertical-offset="1275" max-vertical-offset="2176">
+        <state line="38" column="37" selection-start="1622" selection-end="1622" vertical-scroll-proportion="-7.1923075" vertical-offset="459" max-vertical-offset="2176">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/playlist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/player.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="58" selection-start="3276" selection-end="3286" vertical-scroll-proportion="-14.384615" vertical-offset="1173" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="62" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.16943522" vertical-offset="612" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/services/SongListService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="38" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/MenuController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="40" selection-start="1061" selection-end="1069" vertical-scroll-proportion="0.0" vertical-offset="110" max-vertical-offset="1564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers/PlayerController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="56" selection-start="228" selection-end="243" vertical-scroll-proportion="0.089701" vertical-offset="14" max-vertical-offset="2618">
           <folding />
         </state>
       </provider>

@@ -36,7 +36,7 @@
 
     <div class="category-list main-item" ng-if="display.category">
         <div class="title-box">
-            <div class="title">Thể loại bài hát</div>
+            <div class="title">Chủ đề</div>
         </div>
         <div class="clear-float"></div>
         <div class="list">
@@ -90,7 +90,7 @@
             <div class="clear-float"></div>
             <ul>
                 <li ng-repeat="song in filteredSongs track by $index" class="main-song search-song">
-                    <a href="">
+                    <a href="" ng-click="addFirst(song.id)">
                         <div class="img-container">
                             <img class="icon"
                                  ng-src="{{song.image.replace('STATIC_PATH_V3/images/singer_avatar.jpg','img/albumart-cd.png')}}"

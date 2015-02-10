@@ -26,7 +26,7 @@ controllers.controller('LoginController', ['$scope', 'AccountService',
             if (form.$valid) {
                 $("#input-text").blur();
                 AccountService.loginAcc = $scope.input;
-                AccountService.closePopup(false, !$scope.noAcc);
+                AccountService.closePopup(false, !$scope.input.noAcc);
 
             }
         };

@@ -1,11 +1,11 @@
 <div class="menu" ng-controller="MenuController">
     <div class="icon-home">
-        <a href="#/main">
+        <a href="" ng-click="goto('main')">
             <img src="img/musicstore.png">
         </a>
     </div>
-    <div class="menu-item"><a href="#/playlist">Playlist</a></div>
-    <div class="menu-item"><a href="#/topsongs">Bảng xếp hạng</a></div>
+    <div class="menu-item"><a href="" ng-click="goto('playlist')">Playlist</a></div>
+    <div class="menu-item"><a href="" ng-click="goto('topsongs')">Bảng xếp hạng</a></div>
 
     <form novalidate class="searchbox" name="searchForm" on-outside-element-click="show=false" ng-submit="search()">
         <div class="search">
@@ -49,7 +49,7 @@
     <div ng-show="user.username">
         <div class="menu-item right"><a href="" ng-click="logout()">Đăng xuất</a></div>
         <div class="logout"></div>
-        <div class="menu-item right"><a href="#/myplaylist">Playlist của {{user.username}}</a></div>
+        <div class="menu-item right"><a href="" ng-click="goto('myplaylist')">Playlist của {{user.username}}</a></div>
     </div>
     <div ng-show="!user.username">
         <div class="menu-item right"><a href="" ng-click="login()">Đăng nhập / Đăng kí</a></div>

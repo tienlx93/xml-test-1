@@ -1,8 +1,8 @@
 /**
  * Created by tienl_000 on 28/01/15.
  */
-controllers.controller('MenuController', ['$scope', '$location', 'SearchService', 'SongListService', 'AccountService', 'ErrorService',
-    function ($scope, $location, SearchService, SongListService, AccountService, ErrorService) {
+controllers.controller('MenuController', ['$scope', '$location', '$route', 'SearchService', 'SongListService', 'AccountService', 'ErrorService',
+    function ($scope, $location, $route, SearchService, SongListService, AccountService, ErrorService) {
         $scope.searchText = "";
         $scope.result = [];
         $scope.show = false;
@@ -29,6 +29,13 @@ controllers.controller('MenuController', ['$scope', '$location', 'SearchService'
             }
         };
 
+        $scope.goto = function (url) {
+            if ($location.path().indexOf(url) > 0) {
+                $route.reload();
+            } else {
+                $location.path(url);
+            }
+        };
         $scope.login = function () {
             AccountService.showPopup(function () {
                 $scope.user = AccountService.user;
